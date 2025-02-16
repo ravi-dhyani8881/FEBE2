@@ -16,6 +16,7 @@ import com.spring.graph.QueryResolver.graphResponseTemplate;
 import com.spring.graph.QueryResolver.publishRestResponseTemplate;
 import com.spring.graph.QueryResolver.environmentResponseTemplate;
 import com.spring.graph.QueryResolver.publishGraphResponseTemplate;
+import com.spring.graph.QueryResolver.userSettingResponseTemplate;
 
 @Controller
 public class organizationController {
@@ -69,5 +70,12 @@ public class organizationController {
     							  @Argument String sort,@Argument String advanceField,@Argument String advanceQuery,@Argument String advance,@Argument String field) throws Exception {
 		String query2=QueryUtils.replaceTokens(query, content);	
 		return genericQueryResolver.findpublishGraphByQuery(query2, start, rows, filterField, filterQuery, sort, advanceField, advanceQuery, advance, field);
+    }
+			@SchemaMapping
+			public userSettingResponseTemplate finduserSettingByQuery(Recordsorganization content, @Argument String query, @Argument String start,@Argument String rows,
+    												@Argument String filterField, @Argument String filterQuery,
+    							  @Argument String sort,@Argument String advanceField,@Argument String advanceQuery,@Argument String advance,@Argument String field) throws Exception {
+		String query2=QueryUtils.replaceTokens(query, content);	
+		return genericQueryResolver.finduserSettingByQuery(query2, start, rows, filterField, filterQuery, sort, advanceField, advanceQuery, advance, field);
     }
 }

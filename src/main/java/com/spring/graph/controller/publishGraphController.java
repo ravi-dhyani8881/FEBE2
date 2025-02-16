@@ -11,9 +11,9 @@ import com.spring.graph.QueryResolver.publishGraphResponseTemplate;
 import com.spring.graph.QueryResolver.GenericQueryResolver;
 import com.spring.graph.Model.RecordspublishGraph;
 import com.spring.graph.QueryResolver.userResponseTemplate;
-import com.spring.graph.QueryResolver.subOrganizationResponseTemplate;
 import com.spring.graph.QueryResolver.organizationResponseTemplate;
 import com.spring.graph.QueryResolver.environmentResponseTemplate;
+import com.spring.graph.QueryResolver.subOrganizationResponseTemplate;
 
 @Controller
 public class publishGraphController {
@@ -34,13 +34,6 @@ public class publishGraphController {
 		return genericQueryResolver.finduserByQuery(query2, start, rows, filterField, filterQuery, sort, advanceField, advanceQuery, advance, field);
     }
 			@SchemaMapping
-			public subOrganizationResponseTemplate findsubOrganizationByQuery(RecordspublishGraph content, @Argument String query, @Argument String start,@Argument String rows,
-    												@Argument String filterField, @Argument String filterQuery,
-    							  @Argument String sort,@Argument String advanceField,@Argument String advanceQuery,@Argument String advance,@Argument String field) throws Exception {
-		String query2=QueryUtils.replaceTokens(query, content);	
-		return genericQueryResolver.findsubOrganizationByQuery(query2, start, rows, filterField, filterQuery, sort, advanceField, advanceQuery, advance, field);
-    }
-			@SchemaMapping
 			public organizationResponseTemplate findorganizationByQuery(RecordspublishGraph content, @Argument String query, @Argument String start,@Argument String rows,
     												@Argument String filterField, @Argument String filterQuery,
     							  @Argument String sort,@Argument String advanceField,@Argument String advanceQuery,@Argument String advance,@Argument String field) throws Exception {
@@ -53,5 +46,12 @@ public class publishGraphController {
     							  @Argument String sort,@Argument String advanceField,@Argument String advanceQuery,@Argument String advance,@Argument String field) throws Exception {
 		String query2=QueryUtils.replaceTokens(query, content);	
 		return genericQueryResolver.findenvironmentByQuery(query2, start, rows, filterField, filterQuery, sort, advanceField, advanceQuery, advance, field);
+    }
+			@SchemaMapping
+			public subOrganizationResponseTemplate findsubOrganizationByQuery(RecordspublishGraph content, @Argument String query, @Argument String start,@Argument String rows,
+    												@Argument String filterField, @Argument String filterQuery,
+    							  @Argument String sort,@Argument String advanceField,@Argument String advanceQuery,@Argument String advance,@Argument String field) throws Exception {
+		String query2=QueryUtils.replaceTokens(query, content);	
+		return genericQueryResolver.findsubOrganizationByQuery(query2, start, rows, filterField, filterQuery, sort, advanceField, advanceQuery, advance, field);
     }
 }

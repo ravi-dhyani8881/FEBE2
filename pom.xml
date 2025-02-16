@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.graph</groupId>
-	<artifactId>FEBE2</artifactId>
+	<artifactId>febe2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FEBE2</name>
+	<name>febe2</name>
 	<description>Febe project for Graphql</description>
 	<properties>
 		<java.version>17</java.version>
